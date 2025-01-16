@@ -125,7 +125,6 @@ celerybeat.pid
 
 # Environments
 .venv
-env/
 venv/
 ENV/
 env.bak/
@@ -191,9 +190,8 @@ pyrightconfig.json
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode
+# End of http.envs://www.toptal.com/developers/gitignore/api/python,visualstudiocode
 
 *.csv
-.env
 mlflow_server/*
 mlruns/
