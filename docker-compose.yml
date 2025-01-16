@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  mlflow:
+    image: python-mlflow
+    build:
+      context: .
+    ports:
+      - "${MLFLOW_PORT}:5000"
+    volumes:
+      - "${MLFLOW_LOCAL_VOLUME}:/mlflow"
