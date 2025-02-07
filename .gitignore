@@ -192,6 +192,6 @@ pyrightconfig.json
 
 # End of http.envs://www.toptal.com/developers/gitignore/api/python,visualstudiocode
 
-*.csv
+# *.csv
 mlflow_server/*
 mlruns/
