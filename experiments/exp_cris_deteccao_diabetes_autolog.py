@@ -49,7 +49,7 @@ if __name__ == "__main__":
     # Configurar URI do MLflow
     mlflow.set_tracking_uri("http://0.0.0.0:5002/")
     
-    exp_name = "cris_diabetes_modeling"
+    exp_name = "angel_diabetes_modeling"
     set_experiment(exp_name)
     
  
