@@ -66,7 +66,7 @@ def load_model(model_name, model_type, stage:str="Production"):
         raise ValueError(f"Modelo '{model_name}' não reconhecido.")
 
 if __name__ == "__main__":
-    mlflow_model_name = 'modelo_02'
+    mlflow_model_name = 'diabetes'
     # Configuração inicial
     data_path = BASE_DIR / "data" / "raw" / "diabetes.csv"
     df = load_data(data_path)

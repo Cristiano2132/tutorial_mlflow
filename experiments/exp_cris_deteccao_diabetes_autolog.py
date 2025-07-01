@@ -49,7 +49,7 @@ if __name__ == "__main__":
     # Configurar URI do MLflow
     mlflow.set_tracking_uri("http://0.0.0.0:5002/")
     
-    exp_name = "angel_diabetes_modeling"
+    exp_name = "cris_diabetes_modeling2"
     set_experiment(exp_name)
     
  
@@ -102,6 +102,7 @@ if __name__ == "__main__":
 
         # Iniciar o run após o autolog estar configurado
         with mlflow.start_run(run_name=f"run_{model_name}_v1"):
+
             # Logando os artefatos de feature engineering
             mlflow.log_dict(bins_dict, "feature_engineering/bins.json")
             mlflow.log_dict(encoder.woe_dict, "feature_engineering/woe.json")
@@ -130,12 +131,14 @@ if __name__ == "__main__":
             # Avaliação do modelo no conjunto de teste
             y_pred = model.predict(df.loc[test_index][features])
             df_result = pd.DataFrame({'y': df.loc[test_index][label], 'y_pred': y_pred})
+            
             report_test = get_report_metrics(df=df_result, proba_col='y_pred', true_value_col='y', base="test")
 
             # Logando as métricas
             report = {}
             report.update(report_train)
             report.update(report_test)
+            
             mlflow.log_metrics(report)
 
             mlflow.set_tag("model_type", model_name)
